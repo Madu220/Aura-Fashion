@@ -1,0 +1,309 @@
+/* ============================================
+   ESTILOS UNIFICADOS AURA FASHION
+   ============================================ */
+
+:root {
+    --aura-pink: #e5c3c1;
+    --aura-brown: #6b5450;
+    --aura-red: #dc3545;
+    --header-bg: #e5c3c1;
+    --carousel-dark: #6b5450;
+    --carousel-light: #9d8b87;
+    --footer-bg: #f5f5f5;
+}
+
+body {
+    background-color: #fdfdfd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Header & Navbar (Padronizado) --- */
+.header-bg {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid #d4a7a5;
+}
+
+.logo-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.nav-link.fw-bold, .nav-text {
+    color: #4a2c2b !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.nav-link:hover, .nav-text:hover {
+    color: #8a6b6a !important;
+}
+
+.search-bar, .header-search {
+    width: 200px;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 0 15px;
+}
+
+.icons-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon-placeholder {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+/* --- Hero Section --- */
+.hero-placeholder, .hero-box {
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    background-color: #d0d0d0;
+    overflow: hidden;
+}
+
+.hero-placeholder:hover, .hero-box:hover {
+    transform: scale(1.02);
+}
+
+/* --- Seções de Produtos / Carrossel --- */
+.products-section, .carousel-section {
+    background-color: var(--aura-brown);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+}
+
+.italic-text {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.product-img-placeholder {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+/* Estilos específicos do Carrossel (MiaFarnese) */
+.carousel-header { margin-bottom: 20px; }
+.carousel-title { font-size: 18px; font-weight: 600; margin: 0; color: white; }
+.carousel-container { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.carousel-arrow {
+    width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.2);
+    border: none; border-radius: 50%; color: white; font-size: 20px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.carousel-arrow:hover { background-color: rgba(255, 255, 255, 0.35); }
+.carousel-items { display: flex; gap: 20px; flex-grow: 1; overflow-x: auto; padding: 10px 0; }
+.carousel-item { width: 180px; height: 200px; background-color: #e0e0e0; border-radius: 10px; flex-shrink: 0; }
+
+/* --- Frete --- */
+.card { border: 1px solid #eee; }
+.form-control:focus {
+    border-color: var(--aura-pink);
+    box-shadow: 0 0 0 0.25rem rgba(229, 195, 193, 0.25);
+}
+
+/* --- Alert Cotação --- */
+.alert-dark {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+/* --- Footer --- */
+.footer-bg, footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid #ddd;
+    padding: 3rem 0;
+}
+
+footer h6, .footer-title {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+footer ul, .footer-list { list-style: none; padding: 0; }
+footer ul li, .footer-list li { margin-bottom: 0.5rem; }
+footer ul li a, .footer-list a {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+footer ul li:hover, .footer-list a:hover {
+    color: var(--aura-brown);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .search-bar, .header-search { width: 100%; margin-bottom: 15px; }
+    .hero-placeholder, .hero-box { height: 200px; }
+    .carousel-items { flex-wrap: wrap; }
+    .carousel-item { width: 150px; height: 170px; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Ajuste do Carrossel para 3 Produtos --- */
+.carousel-items {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    overflow-x: hidden; /* Oculta a barra para usar as setas */
+    padding: 10px 0;
+}
+
+.carousel-item-custom {
+    flex: 0 0 calc(33.33% - 14px); /* Divide em 3 partes iguais */
+    min-width: 250px;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: contain; /* Garante que as suas imagens não cortem */
+}
+
+/* --- Estilos do Modal de CEP --- */
+.modal-container-custom {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center; justify-content: center;
+}
+
+.modal-content-custom {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%; max-width: 420px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.fechar-x {
+    position: absolute; right: 15px; top: 10px;
+    font-size: 24px; cursor: pointer; color: var(--aura-brown);
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Ajustes para Tablets (Telas até 992px) */
+@media (max-width: 992px) {
+    .carousel-item-custom {
+        flex: 0 0 calc(50% - 10px); /* Exibe 2 produtos por vez */
+    }
+    
+    .icons-wrapper {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .header-bg .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Ajustes para Celulares (Telas até 576px) */
+@media (max-width: 576px) {
+    .carousel-item-custom {
+        flex: 0 0 100%; /* Exibe apenas 1 produto por vez (ocupa a tela toda) */
+    }
+
+    .carousel-container {
+        padding: 0 10px; /* Reduz o recuo das setas */
+    }
+
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    /* Ajuste do Modal no Celular */
+    .modal-content-custom {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Ajuste da logo e ícones no header */
+    .navbar-brand img {
+        width: 80px;
+    }
+    
+    /* Faz os preços e textos de frete ficarem legíveis */
+    .product-card h6 {
+        font-size: 0.9rem;
+    }
+    
+    .usd-price, .brl-price {
+        font-size: 0.85rem;
+    }
+}
+
+/* Garante que imagens não estourem o layout */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Melhora a rolagem lateral em dispositivos touch */
+.carousel-items {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto; /* Permite scroll com o dedo no celular */
+}
+
+/* Esconde a barra de scroll feia, mantendo a funcionalidade */
+.carousel-items::-webkit-scrollbar {
+    display: none;
+}
+
+.btn-outline-secondary {
+    border-color: var(--aura-brown);
+    color: var(--aura-brown);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--aura-brown);
+    border-color: var(--aura-brown);
+    color: #fff;
+}
